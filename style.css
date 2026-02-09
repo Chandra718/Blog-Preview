@@ -1,0 +1,137 @@
+:root {
+  --accent: hsl(27, 100%, 52%);
+  --soft-accent: hsl(27, 100%, 95%);
+  --bg: hsl(210, 46%, 95%);
+  --card-bg: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 45%);
+  --title: hsl(210, 10%, 10%);
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(20, 20, 30, 0.08);
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Figtree",
+    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--accent); /* Set body background to yellow from the style guide */
+  display: flex; /* Use flexbox to center the card */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Ensure the body takes up the full viewport height */
+  padding: 2rem; /* Keep some padding around the card for smaller screens */
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.card-media img.hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: var(--radius); /* Match card's top-left radius */
+  border-top-right-radius: var(--radius); /* Match card's top-right radius */
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.kicker {
+  font-size: 0.85rem;
+  font-weight: 800; /* The design shows a bolder weight for this tag */
+  color: var(--title); /* Set text color to dark for contrast on yellow */
+  background-color: var(--accent); /* Apply the yellow background color */
+  padding: 0.25rem 0.75rem; /* Add some padding around the text */
+  border-radius: 4px; /* Give it rounded corners */
+  display: inline-block; /* Allows padding and background to apply correctly */
+  margin: 0 0 0.75rem 0; /* Adjust margin-bottom to match design spacing */
+}
+
+.date {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 0.75rem 0;
+}
+
+.title {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.4rem;
+  font-weight: 800; /* The design shows a bolder weight for the title */
+  color: var(--title); /* Ensure the title text is dark */
+}
+
+.excerpt {
+  margin: 0 0 1.2rem 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Adjust gap for consistency between avatar and name */
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* This is good for the spacing between the avatar and name */
+}
+
+.avatar {
+  width: 32px; /* Reduced avatar size to match the design */
+  height: 32px;
+  border-radius: 50%;
+  display: block;
+}
+
+.author-name {
+  margin: 0;
+  font-weight: 600;
+  font-weight: 800; /* The design shows a bolder weight for the author's name */
+  color: var(--title); /* Ensure the author's name is dark */
+}
+.author-role {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.read {
+  text-decoration: none;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Desktop layout */
+@media (min-width: 200px) {
+  .card {
+    /* The card remains a single column (image on top, text below) as per design. */
+  }
+  .card-content {
+    padding: 2rem;
+  }
+  .title {
+    font-size: 1.6rem;
+    font-weight: 800; /* Ensure title remains bold on desktop */
+  }
+}
